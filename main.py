@@ -6,7 +6,7 @@
 # Data In: [the file they want to read from, words they want to search]
 # Data Out:  [number of headlines with word, new file user creates, average characters in each headline, longest and shortest headline]
 # Credits: [class notes and class program, to assigned shortest with None I used the internet because I couldn't figure out how else to make it usable]
-
+# Input Files: [the files with all the headlines on them]
 import os
 
 # Name: read_file_name
@@ -125,6 +125,7 @@ def menu():
 # Return: None
 # main function
 def main(file_name):
+    print('This program allows you to work with different files that contains headlines')
     choice = 0
     while choice != 6:
         print('~' * 100)
