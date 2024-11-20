@@ -78,8 +78,7 @@ def read_in_new_file(file_name):
         file.write('file has been overwrite')
 
 
-def main(file_name):
-
+def menu():
     print(f"\nSelect an option below (Enter a number 1-6):")
     print(f"1. Count how many headlines have a specific word")
     print(f"2. Write headlines with a specific word into a new file")
@@ -87,9 +86,15 @@ def main(file_name):
     print(f"4. Longest and shortest headlines")
     print(f"5. Read in a new file to analyze")
     print(f"6. Exit")
-    choice = int(input("Enter your option: "))
 
-    while choice >= 1 and choice <= 5:
+
+def main(file_name):
+    choice = 0
+    while choice != 6:
+        print('~' * 100)
+        file_name = read_file_name()
+        menu()
+        choice = int(input("Enter your option: "))
         if choice == 1:
             particular_word(file_name)
         elif choice == 2:
@@ -102,15 +107,11 @@ def main(file_name):
         elif choice == 5:
             read_in_new_file(file_name)
         elif choice == 6:
-            print('program exited')
+            print('Program exited')
         else:
-            print("Invalid option")
+            print("Invalid option, please try again.")
 
-    print('program finished')
-
-
-
-
+    print('Program finished')
 
 
 main(read_file_name())
